@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hello</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<!-- Body STARTS HERE -->
+	<div class="container">
+		<h1 class="text-danger text-center my-1">Text Matching App</h1>
+		<div class="row">
+			<div class="col">
+				<form class="form">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="mainText">Main Text:</label>
+								<textarea class="form-control" name="mainText" id="mainText" cols="30" rows="10"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6 d-flex align-items-center">
+							<div class="preview" id="mainPreview">
+								Preview
+							</div>
+						</div>
+					</div>
+					<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="secondaryText">Secondary Text:</label>
+									<textarea class="form-control" name="secondaryText" id="secondaryText" cols="30" rows="10"></textarea>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex align-items-center">
+								<div class="preview" id="secondaryPreview">
+										Preview
+								</div>
+							</div>
+						</div>
+					<button type="submit" class="btn btn-lg btn-primary btn-block" id="match">Match</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer class="bg-danger py-2 text-center text-white fixed-bottom">
+
+	</footer>
+	<!-- Body ENDS HERE -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/main.js"></script>
+</body>
+</html>

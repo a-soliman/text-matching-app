@@ -1,0 +1,22 @@
+@import "./reset/basic-reset";
+@import "./partials/vars";
+
+
+
+body {
+	background: $white;
+}
+
+.preview {
+	padding: 10px;
+}
+.red {
+	background-color: red;
+	color: #fff;
+	padding: 3px;
+}
+
+.success {
+	background: #14c39a;
+	color: #fff;
+}
