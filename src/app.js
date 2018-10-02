@@ -1,3 +1,7 @@
+import  Test  from './test';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'normalize-scss/sass/_normalize.scss';
+import './styles/styles.scss';
 
 const UICtrl = (function() {
     const UISelectors = {
@@ -17,18 +21,14 @@ const UICtrl = (function() {
 
         updatePreview: function(e) {
             UICtrl.resetPreviewClass();
-            const preview = e.target.parentElement.parentElement.parentElement.querySelector('.preview');
-            preview.innerText = UICtrl.trimLineBreaks(e.target.value);
-
-        },
-
-        resetPreview: function() {
+            mainPreview.innerText = document.querySelector(UISelectors.mainTextInput).value;
+            secondaryPreview.innerText = document.querySelector(UISelectors.secondaryTextInput).value;
 
         },
 
         displaySuccess: function() {
-            UICtrl.resetPreview();
             UICtrl.resetPreviewClass();
+            UICtrl.updatePreview();
             mainPreview.className = 'preview success';
             secondaryPreview.className = 'preview success';
         },
@@ -61,6 +61,7 @@ const UICtrl = (function() {
         }
     };
 })();
+
 const App = (function(UICtrl) {
     const UISelectors = UICtrl.getUISelectors();
 
