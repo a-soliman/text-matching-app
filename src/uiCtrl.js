@@ -4,7 +4,8 @@ const UICtrl = (function() {
         mainTextInput: '#mainText',
         secondaryTextInput: '#secondaryText',
         mainPreview: '#mainPreview',
-        secondaryPreview: '#secondaryPreview'
+        secondaryPreview: '#secondaryPreview',
+        cta: '#match'
     };
     const mainPreview = document.querySelector(UISelectors.mainPreview);
     const secondaryPreview = document.querySelector(UISelectors.secondaryPreview);
@@ -53,6 +54,14 @@ const UICtrl = (function() {
                 str = str.slice(0, str.length -1);
             }
             return str;
+        },
+
+        disableCTA: function() {
+            document.querySelector(UISelectors.cta).setAttribute('disabled', true);
+        },
+
+        enableCTA: function() {
+            document.querySelector(UISelectors.cta).removeAttribute('disabled');
         }
     };
 })();

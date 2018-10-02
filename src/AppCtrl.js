@@ -8,6 +8,8 @@ const App = (function(UICtrl) {
         document.querySelector(UISelectors.form).addEventListener('submit', matchText);
         document.querySelector(UISelectors.mainTextInput).addEventListener('keyup', UICtrl.updatePreview);
         document.querySelector(UISelectors.secondaryTextInput).addEventListener('keyup', UICtrl.updatePreview);
+        document.querySelector(UISelectors.mainTextInput).addEventListener('blur', validateToEnableCTA);
+        document.querySelector(UISelectors.secondaryTextInput).addEventListener('blur', validateToEnableCTA);
     }
 
     const matchText = (e) => {
@@ -45,12 +47,22 @@ const App = (function(UICtrl) {
         if ( text1.length < 1 || text2.length < 1 ) return false;
     
         return true;
-    }
+    };
+
+    const validateToEnableCTA = () => {
+        console.log('here');
+        const mainText = document.querySelector(UISelectors.mainTextInput).value;
+        const secondaryText = document.querySelector(UISelectors.secondaryTextInput).value;
+
+        if ( mainText.length > 0 && secondaryText.length > 0 ) return UICtrl.enableCTA();
+        else return UICtrl.disableCTA();
+    };
 
     return {
         init: function() {
             console.log('INIT');
             loadEventListeners();
+            UICtrl.disableCTA();
         }
     }
 })(UICtrl);
