@@ -1,4 +1,4 @@
-import  UICtrl  from './uiCtrl';
+import  UICtrl  from './UICtrl';
 
 const App = (function(UICtrl) {
     const UISelectors = UICtrl.getUISelectors();
