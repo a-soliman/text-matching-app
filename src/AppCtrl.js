@@ -68,4 +68,3 @@ const App = (function(UICtrl) {
 })(UICtrl);
 
 export default App;
-
